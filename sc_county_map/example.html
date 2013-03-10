@@ -4,22 +4,58 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+        <!-- do not use this url. download raphael and sc_county_map instead -->
         <script src="http://rawgithub.com/thegboat/examples/master/sc_county_map/sc_county_map.min.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+          .county_map_info {width:300px;height:600px;}
+          #county_map_wrapper {width:1000px}
+        </style>
     </head>
     <body>
-        <div id="canvas">
-            <div id="paper" class="paper" data-group-jumpers="1,2"></div>
+      <form id="some_form">
+        <label>Greenville</label><input name="county" type="radio" value="23" /> 
+        <label>Spartanburg</label><input name="county" type="radio" value="42" />
+        <label>Anderson</label><input name="county" type="radio" value="4" />
+        <label>Greenwood</label><input name="county" type="radio" value="24" />
+        <a href="http://github.com/thegboat/examples/blob/master/sc_county_map/example.html">view code</a>
+      </form>
+      <div id="county_map_wrapper">
+        <div class="county_map_info" style="float:left;"></div>
+        <div id="county_map" style="float:right;"></div>
+        <div class="county_map_info_greenville" style="display:none;">
+          <h4> Greenville </h4>
+          <p>
+            Greenville County is a county located in the state of South Carolina, United States. As of the 2010 census, its population was 451,225. making it the most populous county in the state.
+          </p>
         </div>
-        <p id="copy">Demo of <a href="http://raphaeljs.com/">Raphaël</a>—JavaScript Vector Library</p>
+        <div class="county_map_info_spartanburg" style="display:none;">
+          <h4> Spartanburg </h4>
+          <p>
+            Spartanburg County is a county located in the U.S. state of South Carolina. The 2010 census recorded its population to be 284,307. Its county seat is Spartanburg. The county comprises the Spartanburg, South Carolina, Metropolitan Statistical Area.
+          </p>
+        </div> 
+        <div class="county_map_info_greenwood" style="display:none;">
+          <h4> Greenwood </h4>
+          <p>
+            Greenwood County is a county located in the U.S. state of South Carolina. As of the 2010 census, its population was 69,661. Its county seat is Greenwood.
+          </p>
+        </div>
+        <div class="county_map_info_anderson" style="display:none;">
+          <h4> Anderson </h4>
+          <p>
+            Anderson County is a county located in the U.S. state of South Carolina. As of the 2010 census, its population was 187,126. Its county seat is Anderson. It is included in the Anderson, South Carolina Metropolitan Statistical Area.
+          </p>
+        </div>
+      </div>
     </body>
     <script>
       $(document).ready(function(){
-        $("#paper").sc_county_map({
+        $("#county_map").sc_county_map({
           members : 'greenville,spartanburg,anderson,greenwood',
           selected : 'greenwood',
-          scale : 0.6,
+          scale : 0.8,
           infoselector : '#county_map_wrapper .county_map_info',
-          formselector : '#county_map_|shape_id|'
+          formselector : "#some_form input[name='county'][value='|shape_id|']"
         })
       })
     </script>
