@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
         <!-- do not use these urls. download raphael and sc_county_map instead -->        
         <script src="https://rawgithub.com/DmitryBaranovskiy/raphael/master/raphael-min.js" type="text/javascript" charset="utf-8"></script>
@@ -56,7 +56,11 @@
           selected : 'greenwood',
           scale : 0.8,
           infoselector : '#county_map_wrapper .county_map_info',
-          formselector : "#some_form input[name='county'][value='|shape_id|']"
+          formselector : "#some_form input[name='county'][value='|shape_id|']",
+          'group-southern' : 'jasper, colleton, charleston, beaufort,hampton' ,
+          'color-southern' : '#FFF0B2, #FFCC00',
+          'group-capitol' : 'richland',
+          'color-capitol' : '#B2FF99,#5CE62E'
         })
       })
     </script>
