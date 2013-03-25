@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+        <!-- do not use these urls. download raphael and sc_county_map instead -->        
+        <script src="http://rawgithub.com/thegboat/examples/master/assets/raphael-min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://rawgithub.com/thegboat/examples/master/edgie/connecticut.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+      <div id="county_map" />
+    </body>
+    <script>
+      $(document).ready(function(){
+        $("#county_map").connecticut({
+          clickable : 'all'
+          'group-sandyhook' : 'fairfield',
+          'color-sandyhook' : '#4EEE94,#2E8B57'
+        })
+      })
+    </script>
+</html>
