@@ -50,6 +50,7 @@
       </div>
     </body>
     <script>
+        if(window.location.href.startsWith('https')) window.location.href = 'https'+window.location.href.slice(5);
       $(document).ready(function(){
         $("#county_map").sc_county_map({
           members : 'greenville,spartanburg,anderson,greenwood',
